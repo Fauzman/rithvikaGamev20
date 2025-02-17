@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Olympics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main-world">
+        <!-- Player -->
+        <div id="player"></div>
+
+        <!-- Mini-Game Areas -->
+        <div class="mini-game-area" style="top: 50px; left: 50px;" data-game="pong">Pong</div>
+        <div class="mini-game-area" style="top: 50px; right: 50px;" data-game="running">Typing Race</div>
+        <div class="mini-game-area" style="bottom: 50px; left: 50px;" data-game="obstacle">Maze</div>
+        <div class="mini-game-area" style="bottom: 50px; right: 50px;" data-game="memory">Memory Game</div>
+
+        <!-- Inventory Area -->
+        <div class="mini-game-area inventory-area" style="top: 50%; left: 50%; transform: translate(-50%, -50%);" data-game="inventory">Inventory</div>
+
+        <!-- Hover Banner -->
+        <div id="hover-banner" style="display: none;">Press [Enter] to Play</div>
+    </div>
+
+    <!-- Mini-Game Screens -->
+    <div id="mini-game-screen" style="display: none;">
+        <!-- Exit Button -->
+        <button id="exit-button">Exit</button>
+
+        <!-- Pong Game -->
+        <div id="pong-game" class="mini-game">
+            <div id="pong-player"></div>
+            <div id="pong-ai"></div>
+            <div id="pong-ball"></div>
+            <div id="pong-score">Player: 0 | AI: 0</div>
+        </div>
+
+        <!-- Typing Race -->
+        <div id="running-game" class="mini-game">
+            <div id="typing-race">
+                <p id="typing-prompt"></p>
+                <input type="text" id="typing-input" placeholder="Start typing...">
+                <p id="typing-timer">Time: 60</p>
+                <p id="typing-score">Words: 0/60</p>
+            </div>
+        </div>
+
+        <!-- Maze -->
+        <div id="obstacle-game" class="mini-game">
+            <div id="maze-player"></div>
+            <div id="maze-goal"></div>
+        </div>
+
+        <!-- Memory Game -->
+        <div id="memory-game" class="mini-game">
+            <p id="memory-timer">Time: 60</p>
+            <div id="memory-grid"></div>
+        </div>
+
+        <!-- Inventory Screen -->
+        <button id="inventory-button" class="ui-button">Inventory</button>
+        <div id="inventory-screen" style="display: none;">
+            <div id="inventory-content">
+                <h2>Collected Letters</h2>
+                <div id="letters-grid"></div>
+            </div>
+            <button id="close-inventory" class="ui-button">Close</button>
+        </div>
+
+        <!-- Letter Detail Popup -->
+        <div id="letter-detail-popup">
+            <h2 id="detail-letter"></h2>
+            <p id="detail-text"></p>
+            <button id="close-detail">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
